@@ -19,7 +19,9 @@ b. Daemon User-Space (VTS – Block 3501 & 3502)
 - Uses FIFO for internal data exchange (Recv data ↔ Get Coords)
 - Creates threads for each “room” (Room1, Room2 … RoomN) to run multiple independent monitoring sessions
 - Logs all monitoring events and results
+
 ![System Flowchart](PROCESS-MONITER/Flowchart.png)
+
 c. CLI Client (Remote)
 - Runs on another device or PC
 - Connects to the daemon via TCP/UDP socket
