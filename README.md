@@ -59,5 +59,6 @@ d. LOC GEN (Block 3502)
   NFR4: Procfs must remain lightweight and must not block kernel execution threads.
 
   NFR5: Logs must follow a standard format and support rotation (log → log1 → log2).
+  
 sys:
 	sudo task
