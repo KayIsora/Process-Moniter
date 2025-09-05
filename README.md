@@ -1,10 +1,3 @@
-# Process-Moniter
-# Project Overview
-Main objective: 
-Build a resource monitoring system (CPU, RAM, I/O…) on an embedded Linux board, allowing remote clients to send START/STOP commands and receive statistical data via socket.
-
-Components:
-Kernel module (driver)
-Procfs interface (/proc/sysmonitor, /proc/sysstats)
-User-space daemon reads procfs and sends data
-Embedded client runs on another device or PC, communicates via TCP/UDP
+# Process-Monitor
+# I. Overview:
+The system is designed to monitor hardware/software resources (CPU, memory, I/O, network) on an embedded Linux board. A remote CLI client can send commands such as START, STOP, EDIT, SHOW, DELETE... via a socket, and the system will respond with real-time monitoring data.
