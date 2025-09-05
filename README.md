@@ -20,7 +20,7 @@ b. Daemon User-Space (VTS – Block 3501 & 3502)
 - Creates threads for each “room” (Room1, Room2 … RoomN) to run multiple independent monitoring sessions
 - Logs all monitoring events and results
 
-![System Flowchart](Flowchart.png)
+![System Flowchart](imnages/Flowchart.png)
 
 c. CLI Client (Remote)
 - Runs on another device or PC
