@@ -31,3 +31,32 @@ c. CLI Client (Remote)
 d. LOC GEN (Block 3502)
 - Generates location/context information for monitoring data
 - Acts as an intermediary between CLI commands and room/thread management
+4. Functional Requirements
+
+FR1: The kernel driver must expose procfs entries for monitoring control and data access.
+
+FR2: Writing 1 to procfs must enable monitoring, and writing 0 must disable it.
+
+FR3: The daemon must run in the background and periodically read data from procfs.
+
+FR4: The daemon must receive CLI commands remotely via socket.
+
+FR5: Each monitoring session (“room”) must be independent and configurable (e.g., interval, duration).
+
+FR6: The system must support multiple concurrent monitoring sessions.
+
+FR7: The system must generate logs for client actions and monitoring data.
+
+FR8: The CLI client must support the following commands: CREATE | DELETE | START | STOP | EDIT | SHOW.
+
+5. Non-Functional Requirements
+
+NFR1: The system must operate with low overhead on embedded Linux.
+
+NFR2: The daemon must be fault-tolerant and capable of restarting.
+
+NFR3: Network communication must support IPv4 over both TCP and UDP.
+
+NFR4: Procfs must remain lightweight and must not block kernel execution threads.
+
+NFR5: Logs must follow a standard format and support rotation (log → log1 → log2).
