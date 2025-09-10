@@ -59,3 +59,22 @@ d. LOC GEN (Block 3502)
   NFR4: Procfs must remain lightweight and must not block kernel execution threads.
 
   NFR5: Logs must follow a standard format and support rotation (log → log1 → log2).
+## VI. Interface (Command lines)
+  - help: show all supported cmd and command details
+
+  - Create: system-monitor create {cpu-room | memory-room | inf-stats-room} [interval <int>]
+
+  - Start: system-monitor start {cpu-room | memory-room | inf-stats-room} [interval <int>]
+
+  - Edit: system-monitor edit {cpu-room | memory-room | inf-stats-room} interval <int> 
+
+  - Stop: system-monitor stop {cpu-room | memory-room | inf-stats-room}
+
+  - Delete: system-monitor delete {cpu-room | memory-room | inf-stats-room}
+
+  - Show: system-monitor show [cpu-room | memory-room | inf-stats-room]
+
+  - Other command: Raise an ERROR && help for all commands
+	
+
+
