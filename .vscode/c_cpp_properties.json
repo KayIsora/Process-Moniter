@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/lib/modules/5.4.0-150-generic/build/include",
+                "${workspaceFolder}/src/01-kernel-module",
+                "/usr/src/linux-headers-5.4.0-150-generic/include",
+                "/usr/include",
+                "/lib/modules/5.4.0-150-generic/build/include/linux",
+                "/lib/modules/5.4.0-150-generic/build/include/uapi",
+                "/usr/src/linux-headers-5.4.0-150-generic/arch/x86/include",
+                "/usr/src/linux-headers-5.4.0-150-generic/arch/x86/include/asm",
+                "/lib/modules/5.4.0-150-generic/build/include/generated/uapi",
+                "/lib/modules/5.4.0-150-generic/build/arch/x86/include",
+                "/lib/modules/5.4.0-150-generic/build/include/generated",
+                "/usr/src/linux-headers-5.4.0-150-generic/arch/x86/include/generated"
+            ],
+            "defines": [
+                "__KERNEL__",
+                "MODULE"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/src/01-kernel-module",
+                    "/usr/src/linux-headers-5.4.0-150-generic/include",
+                    "/usr/include",
+                    "/lib/modules/5.4.0-150-generic/build/include",
+                    "/lib/modules/5.4.0-150-generic/build/include/linux",
+                    "/lib/modules/5.4.0-150-generic/build/include/uapi",
+                    "/usr/src/linux-headers-5.4.0-150-generic/arch/x86/include",
+                    "/lib/modules/5.4.0-150-generic/build/include/generated/uapi",
+                    "/lib/modules/5.4.0-150-generic/build/include/generated"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

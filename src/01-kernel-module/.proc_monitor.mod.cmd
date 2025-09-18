@@ -1,0 +1,1 @@
+cmd_/home/ngbao/Desktop/Process-Moniter/src/01-kernel-module/proc_monitor.mod := { echo  /home/ngbao/Desktop/Process-Moniter/src/01-kernel-module/proc_monitor.o;  echo; } > /home/ngbao/Desktop/Process-Moniter/src/01-kernel-module/proc_monitor.mod
