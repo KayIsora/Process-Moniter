@@ -16,7 +16,7 @@ int test_basic_connection() {
     struct sockaddr_in server_addr;
     char buffer[BUFFER_SIZE];
     
-    printf("Testing basic socket connection to %s:%d\\n", SERVER_IP, SERVER_PORT);
+    printf("Testing basic socket connection to %s:%d\n", SERVER_IP, SERVER_PORT);
     
     // Create socket
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -43,7 +43,7 @@ int test_basic_connection() {
         return -1;
     }
     
-    printf("✓ Connected successfully\\n");
+    printf("✓ Connected successfully\n");
     
     // Send a simple command
     const char *test_command = "SHOW";
@@ -53,7 +53,7 @@ int test_basic_connection() {
         return -1;
     }
     
-    printf("✓ Sent command: %s\\n", test_command);
+    printf("✓ Sent command: %s\n", test_command);
     
     // Receive response
     ssize_t bytes_received = recv(sockfd, buffer, sizeof(buffer) - 1, 0);
@@ -63,11 +63,11 @@ int test_basic_connection() {
         return -1;
     }
     
-    buffer[bytes_received] = '\\0';
-    printf("✓ Received response: %s\\n", buffer);
+    buffer[bytes_received] = '\0';
+    printf("✓ Received response: %s\n", buffer);
     
     close(sockfd);
-    printf("✓ Connection closed\\n");
+    printf("✓ Connection closed\n");
     
     return 0;
 }
@@ -82,10 +82,10 @@ int test_multiple_commands() {
         "SHOW test-room",
         "STOP test-room"
     };
-    int num_commands = sizeof(commands) / sizeof(commands);
+    int num_commands = sizeof(commands) / sizeof(commands[0]);
     int i;
     
-    printf("\\nTesting multiple commands...\\n");
+    printf("\nTesting multiple commands...\n");
     
     for (i = 0; i < num_commands; i++) {
         // Create new connection for each command
@@ -113,36 +113,36 @@ int test_multiple_commands() {
             return -1;
         }
         
-        printf("Sent: %s\\n", commands[i]);
+        printf("Sent: %s\n", commands[i]);
         
         // Receive response
         ssize_t bytes_received = recv(sockfd, buffer, sizeof(buffer) - 1, 0);
         if (bytes_received > 0) {
-            buffer[bytes_received] = '\\0';
-            printf("Received: %s\\n", buffer);
+            buffer[bytes_received] = '\0';
+            printf("Received: %s\n", buffer);
         }
         
         close(sockfd);
-        usleep(100000);  // 100ms delay between commands
+        sleep(100000);  // 100ms delay between commands
     }
     
-    printf("✓ Multiple commands test completed\\n");
+    printf("✓ Multiple commands test completed\n");
     return 0;
 }
 
 int main() {
-    printf("=== Basic Socket Test for Process Monitor Daemon ===\\n");
+    printf("=== Basic Socket Test for Process Monitor Daemon ===\n");
     
     if (test_basic_connection() < 0) {
-        printf("✗ Basic connection test failed\\n");
+        printf("✗ Basic connection test failed\n");
         return EXIT_FAILURE;
     }
     
     if (test_multiple_commands() < 0) {
-        printf("✗ Multiple commands test failed\\n");
+        printf("✗ Multiple commands test failed\n");
         return EXIT_FAILURE;
     }
     
-    printf("\\n=== All socket tests passed! ===\\n");
+    printf("\n=== All socket tests passed! ===\n");
     return EXIT_SUCCESS;
 }

@@ -75,6 +75,4 @@ d. LOC GEN (Block 3502)
   - Show: system-monitor show [cpu-room | memory-room | inf-stats-room]
 
   - Other command: Raise an ERROR && help for all commands
-	
-
 

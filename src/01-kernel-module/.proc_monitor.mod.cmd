@@ -1,1 +1,1 @@
-cmd_/home/ngbao/Desktop/Process-Moniter/src/01-kernel-module/proc_monitor.mod := { echo  /home/ngbao/Desktop/Process-Moniter/src/01-kernel-module/proc_monitor.o;  echo; } > /home/ngbao/Desktop/Process-Moniter/src/01-kernel-module/proc_monitor.mod
+savedcmd_/home/internngbao2/Desktop/Process-Moniter/src/01-kernel-module/proc_monitor.mod := printf '%s\n'   proc_monitor.o | awk '!x[$$0]++ { print("/home/internngbao2/Desktop/Process-Moniter/src/01-kernel-module/"$$0) }' > /home/internngbao2/Desktop/Process-Moniter/src/01-kernel-module/proc_monitor.mod

@@ -31,9 +31,9 @@ typedef enum {
 // Command structure
 typedef struct {
     command_type_t type;
-    char room_name;
+    char room_name[64];
     int room_size;
-    char args[MAX_ARGS];
+    char args[MAX_ARGS][64];
     int arg_count;
 } command_t;
 

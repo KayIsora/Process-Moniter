@@ -15,6 +15,7 @@
 #include <fcntl.h>
 #include <syslog.h>
 #include <pthread.h>
+#include <stdarg.h>
 
 // Constants
 #define SERVER_PORT 8080

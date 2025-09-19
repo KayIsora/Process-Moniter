@@ -1,11 +1,8 @@
-#ifndef PROC_MONITOR_H
-#define PROC_MONITOR_H
+#ifndef _PROC_MONITOR_H
+#define _PROC_MONITOR_H
 
-#define PROC_MONITOR_NAME "sysmonitor"
-#define PROC_STATS_NAME   "sysstats"
-#define PROC_IO_NAME      "sysio"
+#define PROC_MONITOR_NAME   "sysmonitor"
+#define PROC_STATS_NAME     "sysstats"
+#define PROC_IO_NAME        "sysio"
 
-// State flag: bật/tắt monitor
-extern int monitor_enabled;
-
-#endif // PROC_MONITOR_H
+#endif /* _PROC_MONITOR_H */

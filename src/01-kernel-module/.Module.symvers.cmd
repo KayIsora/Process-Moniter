@@ -1,0 +1,1 @@
+savedcmd_/home/internngbao2/Desktop/Process-Moniter/src/01-kernel-module/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/internngbao2/Desktop/Process-Moniter/src/01-kernel-module/Module.symvers -T /home/internngbao2/Desktop/Process-Moniter/src/01-kernel-module/modules.order -i Module.symvers -e 

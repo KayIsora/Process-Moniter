@@ -6,14 +6,14 @@
 set -e  # Exit on any error
 
 # Colors for output
-RED='\\033[0;31m'
-GREEN='\\033[0;32m'
-YELLOW='\\033[1;33m'
-NC='\\033[0m' # No Color
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
 
 # Configuration
-CLIENT_BIN="../client/client"
-DAEMON_BIN="../daemon/daemon"
+CLIENT_BIN="../client_exe"
+DAEMON_BIN="../daemon_exe"
 DAEMON_PID=""
 TEST_LOG="test_results.log"
 
@@ -76,7 +76,7 @@ test_command() {
     
     # Run command and capture output
     local output
-    local exit_code
+    local exit_code=0
     output=$($command 2>&1) || exit_code=$?
     
     if [ "$expected_result" = "success" ]; then
@@ -181,8 +181,8 @@ main() {
     
     test_command "Invalid command" "$CLIENT_BIN invalid-command" "failure"
     test_command "Create without size" "$CLIENT_BIN create test-room" "failure"
-    test_command "Start non-existent room" "$CLIENT_BIN start non-existent" "success"  # Should return error from daemon
-    test_command "Create duplicate room" "$CLIENT_BIN create cpu-room 500" "success"  # Should return error from daemon
+    test_command "Start non-existent room" "$CLIENT_BIN start non-existent" "failure"  # Should return error from daemon
+    test_command "Create duplicate room" "$CLIENT_BIN create cpu-room 500" "failure"  # Should return error from daemon
     
     # Phase 3C: Multiple operations test
     print_status "INFO" "=== Phase 3C: Multiple Operations Tests ==="
@@ -197,12 +197,12 @@ main() {
     
     # Test summary
     print_status "INFO" "=== Test Summary ==="
-    local total_tests=$(grep -c "\\[PASS\\]\\|\\[FAIL\\]" $TEST_LOG | head -1)
-    local passed_tests=$(grep -c "\\[PASS\\]" $TEST_LOG)
-    local failed_tests=$(grep -c "\\[FAIL\\]" $TEST_LOG)
+    local total_tests=$(grep -c "\[PASS\]\|\[FAIL\]" $TEST_LOG)
+    local passed_tests=$(grep -c "\[PASS\]" $TEST_LOG)
+    local failed_tests=$(grep -c "\[FAIL\]" $TEST_LOG)
     
     print_status "INFO" "Total tests: $total_tests"
-    print_status "INFO" "Passed: $passed_tests"
+    print_status "INFO" "Passed: $passed_tests"  
     print_status "INFO" "Failed: $failed_tests"
     
     if [ $failed_tests -eq 0 ]; then

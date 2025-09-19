@@ -1,0 +1,66 @@
+Test started at Thứ sáu, 19 Tháng 9 năm 2025 16:02:48 +07
+[INFO] Starting daemon in background...
+[PASS] Daemon started successfully (PID: 3468578)
+[INFO] Testing socket connectivity...
+[PASS] Daemon is listening on port 8080
+[INFO] Testing TCP connection with netcat...
+[PASS] TCP connection test successful
+[INFO] === Phase 3A: Client CLI Tests ===
+[INFO] Testing: Help command
+[INFO] Command: ../client_exe help
+[PASS] Help command
+[INFO] Testing: Create cpu-room
+[INFO] Command: ../client_exe create cpu-room 1000
+[PASS] Create cpu-room
+[INFO] Testing: Start cpu-room
+[INFO] Command: ../client_exe start cpu-room
+[PASS] Start cpu-room
+[INFO] Testing: Show cpu-room
+[INFO] Command: ../client_exe show cpu-room
+[PASS] Show cpu-room
+[INFO] Testing: Stop cpu-room
+[INFO] Command: ../client_exe stop cpu-room
+[PASS] Stop cpu-room
+[INFO] === Phase 3B: Error Handling Tests ===
+[INFO] Testing: Invalid command
+[INFO] Command: ../client_exe invalid-command
+[PASS] Invalid command (expected failure)
+[INFO] Testing: Create without size
+[INFO] Command: ../client_exe create test-room
+[PASS] Create without size (expected failure)
+[INFO] Testing: Start non-existent room
+[INFO] Command: ../client_exe start non-existent
+[PASS] Start non-existent room (expected failure)
+[INFO] Testing: Create duplicate room
+[INFO] Command: ../client_exe create cpu-room 500
+[PASS] Create duplicate room (expected failure)
+[INFO] === Phase 3C: Multiple Operations Tests ===
+[INFO] Testing: Create memory-room
+[INFO] Command: ../client_exe create memory-room 2000
+[PASS] Create memory-room
+[INFO] Testing: Create disk-room
+[INFO] Command: ../client_exe create disk-room 1500
+[PASS] Create disk-room
+[INFO] Testing: List all rooms
+[INFO] Command: ../client_exe show
+[PASS] List all rooms
+[INFO] Testing: Start memory-room
+[INFO] Command: ../client_exe start memory-room
+[PASS] Start memory-room
+[INFO] Testing: Start disk-room
+[INFO] Command: ../client_exe start disk-room
+[PASS] Start disk-room
+[INFO] Testing: Show memory-room status
+[INFO] Command: ../client_exe show memory-room
+[PASS] Show memory-room status
+[INFO] Testing: Show disk-room status
+[INFO] Command: ../client_exe show disk-room
+[PASS] Show disk-room status
+[INFO] === Test Summary ===
+[INFO] Total tests: 19
+[INFO] Passed: 19
+[INFO] Failed: 0
+[PASS] All tests completed successfully!
+[INFO] Cleaning up...
+[INFO] Stopping daemon (PID: 3468578)...
+[INFO] Daemon stopped
